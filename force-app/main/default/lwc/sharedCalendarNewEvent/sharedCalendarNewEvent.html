@@ -1,0 +1,89 @@
+<template>
+    <!-- HEADER -->
+    <lightning-modal-header
+        label={modalHeader}
+    ></lightning-modal-header>
+
+    <!-- BODY -->
+    <lightning-modal-body>
+        <!-- FORM -->
+        <div>
+            <!-- SUBJECT -->
+            <lightning-input 
+                type="text"
+                name="subject"
+                label="Subject"
+                value={subjectValue}
+                onchange={handleSubjectChange}
+                disabled={saveInProcess}
+                required
+            ></lightning-input>
+
+            <!-- TYPE -->
+            <lightning-combobox
+                name="type"
+                label="Type"
+                value={typeValue}
+                options={typeOptions}
+                onchange={handleTypeChange}
+                disabled={saveInProcess}
+                required
+            ></lightning-combobox>
+
+            <!-- LOCATION -->
+            <lightning-input 
+                type="text"
+                name="location"
+                label="Location"
+                value={locationValue}
+                onchange={handleLocationChange}
+                disabled={saveInProcess}
+                required
+            ></lightning-input>
+
+            <!-- START DATE/TIME -->
+            <lightning-input 
+                type="datetime"
+                name="startDateTime"
+                label="Start Date/Time"
+                value={startDateTimeValue}
+                onchange={handleStartDateTimeChange}
+                disabled={saveInProcess}
+                required
+            ></lightning-input>
+
+            <!-- END DATE/TIME -->
+            <lightning-input 
+                type="datetime"
+                name="endDateTime"
+                label="End Date/Time"
+                value={endDateTimeValue}
+                onchange={handleEndDateTimeChange}
+                disabled={saveInProcess}
+                required
+            ></lightning-input>
+
+        </div>
+    </lightning-modal-body>
+
+    <!-- FOOTER -->
+    <lightning-modal-footer>
+        <!-- CANCEL -->
+        <lightning-button 
+            variant="neutral" 
+            label="Cancel" 
+            title="Cancel" 
+            onclick={handleCancel} 
+            disabled={saveInProcess}
+        ></lightning-button>
+        <!-- SAVE -->
+        <lightning-button 
+            variant="brand" 
+            label="Save" 
+            title="Save" 
+            onclick={handleSave} 
+            class="slds-m-left_x-small"
+            disabled={saveInProcess}
+        ></lightning-button>
+    </lightning-modal-footer>
+</template>

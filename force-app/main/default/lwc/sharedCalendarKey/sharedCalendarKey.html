@@ -1,0 +1,35 @@
+<template>
+    <lightning-layout horizontal-align="space" multiple-rows="true">
+        <!-- CALENDAR KEY -->
+        <lightning-layout-item padding="around-small" size="10">
+            <div if:true={eventTypeSettings}>
+                <lightning-card title="Key" variant="narrow">
+                    <lightning-layout horizontal-align="space">
+                        <template for:each={eventTypeSettings} for:item="ets">
+                            <lightning-layout-item padding="around-small" key={ets.Id}>
+                                <div style={ets.keyItemStyle}>
+                                    {ets.MasterLabel}
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </lightning-card>
+            </div>
+        </lightning-layout-item>
+
+        <!-- NEW EVENT ACTION -->
+        <lightning-layout-item if:false={isGuest} padding="around-small" size="2">
+            <div class="slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand-outline" 
+                    label="Submit Event" 
+                    title="Submit Event" 
+                    icon-name="action:log_event"
+                    onclick={addNewEvent} 
+                    class="slds-m-left_x-small"
+                ></lightning-button>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>
