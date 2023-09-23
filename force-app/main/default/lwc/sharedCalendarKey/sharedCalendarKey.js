@@ -23,8 +23,8 @@ export default class SharedCalendarKey extends LightningElement {
             rows.forEach(row => {
                 let itemStyle = 'background-color:' + row.Calendar_Background_Color__c + 
                     ';color: ' + row.Calendar_Text_Color__c + 
-                    ';border: 1px solid ' + row.Calendar_Border_Color__c + ';' + 
-                    ';text-align: center;padding: 1rem';
+                    ';border: 1px solid ' + row.Calendar_Border_Color__c + ';border-radius: 5px' + 
+                    ';text-align: center;padding: 0.25rem 1rem 0.25rem 1rem';
                 row.keyItemStyle = itemStyle;
             });
             this.eventTypeSettings = rows;

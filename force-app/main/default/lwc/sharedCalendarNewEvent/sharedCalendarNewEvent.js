@@ -30,7 +30,7 @@ export default class SharedCalendarNewEvent extends LightningModal {
      * Getter in case its helpful to include dynamic data
      */
     get modalHeader() {
-        return `Add New Event`;
+        return `Submit Event for Approval`;
     }
 
     /**
