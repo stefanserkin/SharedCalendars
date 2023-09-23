@@ -47,12 +47,12 @@ export default class SharedCalendarKey extends LightningElement {
             eventTypeSettings: this.eventTypeSettings
         });
         if (result == 'success') {
-            window.location.reload();
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Success!',
                     message: 'The event has been submitted for review',
                     variant: 'success',
+                    mode: 'sticky'
                 })
             );
         }
